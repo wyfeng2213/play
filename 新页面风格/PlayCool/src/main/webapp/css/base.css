@@ -1,0 +1,164 @@
+/*base img 10 top  */
+html {font-size: 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body{font-family: "microsoft yahei";color: #444;font-size: 14px;font-weight: 400;}
+.clearfix{clear: both; display: block;content: " ";}
+.clearfix::before,.clearfix::after{clear: both; display: block;content: " ";}
+.fl{float: left;}
+.fr{float: right;}
+img{max-width: 100%;border: none;}
+ul,li,p,dl,dd,dt,label,div,body,button,input,h1,h2{list-style: none;padding: 0;margin: 0;}
+input[type="text"],input[type="password"],input[type="button"],input[type="number"],input[type="submit"],input[type="file"]{-webkit-tap-highlight-color: transparent;background-color:transparent;}
+a{text-decoration: none;}
+*{box-sizing: border-box;}
+*:focus ,input{ outline: none;background-color:transparent; }
+input,button,textarea{font-family: 'microsoft yahei';}
+/**/
+
+/*header*/
+.hide{display: none;}
+.a-container{
+	max-width:1024px;
+}
+.a-container .title{
+	font-size:24px;
+	text-align: center;
+	color: #4888e5;
+	margin: 15px 0;
+}
+.a-container .subtitle{
+	font-size: 18px;
+	border-left: 4px solid #aecbf4;
+	padding-left: 10px;
+}
+.a-container .tableapply{width: 100%;}
+.a-container .tableapply td{
+	width:30%;
+	height: 40px;
+	vertical-align: text-top;
+}
+.a-container .tableapply td.bname{
+	text-align: right;
+	width: 20%;
+	padding-right: 15px;
+}
+.a-container .tableapply td.bnameUrl{
+	text-align: right;
+	width: 50%;
+	padding-right: 15px;
+}
+.a-container .tableapply .inputstyle{
+	height:32px;
+    width:78%;
+    border: 1px solid #999;
+    padding-left: 10px;
+    line-height: 30px;
+}
+.a-container .redico{
+	color: #fc0000;
+	display: inline-block;
+	margin-left: 5px;
+	font-weight: bold;
+}
+.a-container .checkbox{
+	display: inline-block;
+	position: relative;
+	margin:5px 18px 5px 0;
+	background: url(../images/check_off.png) no-repeat left center;
+	padding-left: 20px;
+}
+.a-container .checkbox.on{
+	background: url(../images/check_on.png) no-repeat left center;
+}
+.a-container .checkbox input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width:100%;
+	height: 100%;
+	opacity: 0;
+	filter:Alpha(opacity=0)
+}
+.a-container .textareastyle{
+	width:92%;
+    height: 96px;
+    border: 1px solid #999;
+    background-color: #fff;
+    display: block;
+    margin-right: 15px;
+    line-height: 16px;
+    resize: none;
+    margin-bottom: 17px;
+}
+.a-container .textareainfo{
+	margin-bottom: 17px;
+    display: block;
+}
+.a-container .bleft{
+	text-align: right;
+	padding-right: 25px;
+}
+.a-container .bright{
+	text-align: left;
+	padding-left: 25px;
+}
+.a-container .buttonstyle{
+	width:91px;
+	height: 33px;
+	background:#4988e3 ;
+	border:none;
+	color: #fff;
+}
+/*审批页面*/
+.a-container .tableapproval{
+	width:90%;
+	border: 1px solid #efefef;
+	border-collapse: collapse;
+	text-align: center;
+	margin-left:10%;
+	margin-top: 15px;
+}
+.a-container .tableapproval thead tr{
+	background: #b6d0f5;
+	color: #fff;
+}
+.a-container .tableapproval td{
+	height:36px;
+	border: 1px solid #efefef;
+	border-collapse: collapse;
+	width: 20%;
+}
+.a-container .requireinfo{
+	margin-right:25px;
+	margin-bottom:10px;
+}
+.a-container .uploadimg{
+	display: inline-block;
+	position: relative;
+	width: 100px;
+    height: 28px;
+    background: #4889e5;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+}
+.a-container .uploadimg input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	filter:Alpha(opacity=0);
+	
+}
+.a-container .uploadinfo{
+	display: inline-block;
+	overflow: hidden;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+.a-container .uploadinfo img{
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}

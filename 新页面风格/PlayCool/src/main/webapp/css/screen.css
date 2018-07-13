@@ -1,0 +1,18 @@
+/**********************************
+
+Use: Main Screen Import
+
+***********************************/
+
+@import "reset.css";
+@import "core.css";
+
+/* @import "cmxformTemplate.css"; */
+@import "cmxform.css";
+
+#commentForm { height: 100%; width: 100%; }
+#commentForm label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}

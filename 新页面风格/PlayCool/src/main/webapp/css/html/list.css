@@ -1,0 +1,54 @@
+	body {
+		font-size : 12px;
+		font-family : simsun;
+	}
+	.main-data {
+		width : 100%;
+		height : 100%;
+	}
+	.main-data > table {		
+	}
+	.Search-box {
+		width : 100%;
+		height : 100%;
+	}
+
+	.frmSearch {
+		width : 100%;
+		height : 100%;
+		margin : 0;
+		padding : 0;
+		display : block;
+	}
+	
+	.tableForm {
+		height : 100%;
+		padding:0px;
+		border-spacing : 0px;
+		cellpadding : 0px;
+	}
+	
+	.tableForm th {
+		width:100px;
+		padding-right: 10px;
+		text-align : right;
+		/* background-color: gray; */
+	}
+	/* .tableForm td {
+		width:150px;
+	}
+	.tableForm input {
+		width : 150px;
+	} */
+	
+	a {
+	 border : 0;
+	 text-decoration : none; 
+	 color : black;
+	 overflow : hidden;
+	} 
+	
+	/* 不可编辑样式 */
+	.uneditableInput {
+		background-color: #DFDFDF;
+	}

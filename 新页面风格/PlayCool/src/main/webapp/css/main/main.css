@@ -1,0 +1,166 @@
+#north_panle {
+	height: 86px;
+	overflow: hidden;
+}
+
+.top-bg {
+	background-image: url('../../images/bj.jpg');
+	background-repeat:repeat-x;
+	background-color: #0183CF;
+	height: 61px;
+}
+
+.top-bar {
+	background-color:#E9F4F7;
+	width:100%;
+	height: 25px;
+	vertical-align: middle;
+}
+
+.top-bar div {
+	height:100%;
+	line-height: 100%;
+	overflow: hidden;
+}
+
+.top-bar_user{
+	padding-left:0;
+	margin-top:6px;
+	float:left;
+	width: 200px;
+}
+#top-bar_msg{
+	padding:0;
+	margin-top:6px;
+	float:left;
+	vertical-align: bottom;
+}
+.top-bar_btn{
+	padding:0;
+	margin:0;
+	float:right;
+}
+
+.top-bg_logo,.top-bg_title {
+	height: 100%;
+	float: left;
+}
+
+.top-bg_title {
+	margin-left: 5px;
+}
+
+.top-bg_title_top {
+	padding: 15px 0 0 0;
+	height: 30px;
+	font-size: 30px;
+	vertical-align: bottom;
+}
+
+.top-bg_title_bottom {
+	margin-top: 5px;
+	height: 20px;
+	font-size: 14px;
+}
+
+.top-bg_context {
+	float: right;
+	width: 300px;
+	height: 100%;
+}
+
+.top_tool_bar_date {
+	width: 100%;
+	height: 50%;
+	float: right;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.top_tool_bar_userinfo {
+	width: 400px;
+	height: 50%;
+	float: right;
+	margin: -13px auto;
+	overflow: visible;
+	white-space: nowrap;
+}
+
+.footer {
+	background-color: #ACCFFA;
+	width: 100%;
+	text-align: center;
+	line-height: 25px;
+}
+
+#south_panle {
+	height: 25px;
+	overflow: hidden;
+}
+
+#mainPanle {
+	background: #eee;
+	overflow-y: hidden;
+}
+
+#west {
+	width: 200px;
+}
+#home {
+	padding: 20px;
+	overflow: hidden;
+}
+
+#mm {
+	width: 100px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* 控制面板 样式 */
+#controllerPanel span span.l-btn-text{
+	vertical-align: baseline;
+	top: 0;
+}
+
+/* 按钮鼠标悬停 样式 */
+.top-bar_btn span input[type="button"]:HOVER  {
+	 cursor: pointer;
+}
+/*2018.4.18*/
+.layout-split-west #west{
+	background: rgb(47,67,94);
+}
+.ztree{padding: 0;}
+.ztree li{line-height: 36px;border-top: 1px solid #374d6b;border-bottom: 1px solid #293a52;}
+.ztree li a{height: 36px;padding-left: 20px;display: block;}
+.ztree li span{color: #9facbd;font-size: 14px;line-height: inherit;}	
+.ztree li span.button.defaultIcon_ico_docu{display: none;}
+.ztree li span.button.switch{display: none;}
+.ztree li span.button.pSysIcon_ico_open, .ztree li span.button.pSysIcon_ico_close{background:url(../../images/icon.png) no-repeat;background-position:0 0;float: right;vertical-align: middle;width: 24px;height: 24px;margin-top: 6px;}
+.ztree li a.curSelectedNode{background: none;border: none;height: 36px;}
+.ztree li span.button.pSysIcon_ico_open{background-position: 0 -24px;}
+.ztree li ul.line,.ztree li ul{background:#28344b;padding: 0;}
+.ztree li ul.line li,.ztree li ul li{border: none;}
+.ztree li ul.line li a,.ztree li ul li a{padding-left: 38px;}
+.footer{background-color: rgb(46,123,206);color: #fff;}
+.ztree li a.curSelectedNode{background:#4889e5 url("../../images/item_arrow.png") right center no-repeat;color: #fff !important;}
+.ztree li a.curSelectedNode span{color: #fff;}
+.datagrid-header td{border: 1px solid #efefef;border-right: none;border-left: none;height: 38px;color: white;background: #b6d0f5;white-space: nowrap;}
+/*0423*/
+.top-bar{background:#b6d0f5;}
+/*0504*/
+.top-bg_context{line-height: 61px;color: #fff;width: 200px;}
+.top-bg_context .username{float: left;}
+#north_panle{height: 61px !important;}
+.controlbtn{width: 120px !important;}
+.controlbtn a{background: #fff;border-radius: 15px;width: 80%;text-align: center;color: #333;margin-top: 16.5px;}
+.top-bg_context .controlbtn span span.l-btn-text{height: 23px;line-height: 23px;}
+.controlbtn a:hover.l-btn-plain{background: #e2e2e2;border-radius: 15px;}
+#na_menu_search,#na_menu_operater{display: none;}
+#north_panle{border: none;}
+#west{border: none;}
+.top-bg_logo img{width: 43px !important;height: 43px !important;margin-top: 7px !important;}
+.top-bg_title_top{font-size:23px;}

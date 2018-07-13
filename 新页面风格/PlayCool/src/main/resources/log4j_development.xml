@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/debug/debug.out" />
+		<param name="encoding" value="UTF-8" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferSize" value="1024" />
+		<param name="BufferedIO" value="false" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n"  />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="DEBUG" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="INFO" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/info/info.out" />
+		<param name="encoding" value="UTF-8" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferSize" value="1024" />
+		<param name="BufferedIO" value="false" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n"  />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="INFO" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="WARN" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/warn/warn.out" />
+		<param name="encoding" value="UTF-8" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferSize" value="1024" />
+		<param name="BufferedIO" value="false" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n"  />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="WARN" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/error/error.out" />
+		<param name="encoding" value="UTF-8" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferSize" value="1024" />
+		<param name="BufferedIO" value="false" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="ERROR" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<appender name="FATAL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="log/fatal/fatal.out" />
+		<param name="encoding" value="UTF-8" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="BufferSize" value="1024" />
+		<param name="BufferedIO" value="false" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="FATAL" />
+			<param name="LevelMax" value="FATAL" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+	
+	<appender name="MAIL" class="org.apache.log4j.net.SMTPAppender">
+		<param name="threshold" value="ERROR" />
+		<param name="BufferSize" value="10" />
+		<param name="From" value="log4j_2014@163.com" />
+		<param name="SMTPHost" value="smtp.163.com" />
+		<param name="Subject" value="development_logistics" />
+		<param name="To" value="log4j2014@163.com" />
+		<param name="SMTPUsername" value="log4j_2014" />
+		<param name="SMTPPassword" value="2014log4j" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[logistics] %-d{yyyy-MM-dd HH:mm:ss SSS} %t %l%n[%p] %m%n%n" />
+		</layout>
+	</appender>
+	
+	<logger name="org.springframework">
+        <level value="DEBUG"/>
+    </logger>
+	<logger name="org.codehaus">
+        <level value="DEBUG"/>
+    </logger>
+	<logger name="net.sf">
+        <level value="WARN"/>
+    </logger>
+   	<logger name="org.mybatis">
+        <level value="WARN"/>
+    </logger>
+   	<logger name="org.apache">
+        <level value="WARN"/>
+    </logger>
+   	<logger name="com.alibaba">
+        <level value="WARN"/>
+    </logger>
+    <logger name="com.jshuabo">
+        <level value="DEBUG"/>
+    </logger>
+	
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="DEBUG" />
+		<appender-ref ref="INFO" />
+		<appender-ref ref="WARN" />
+		<appender-ref ref="ERROR" />
+		<appender-ref ref="FATAL" />
+		<appender-ref ref="MAIL" />
+	</root>
+	
+</log4j:configuration>

@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<jsp:include page="/WEB-INF/view/common/memory.jsp"></jsp:include>
+
+<script type="text/javascript">
+	//右键菜单项生效失效逻辑代码
+	var rightMenuFun = function() {
+		var selections = $("#sysExceptionLog").datagrid('getSelections');
+		var menuTarget = $("#sysExceptionLog_menu");
+		if(selections.length == 1) {
+			menuTarget.menu('enableItem', $('#sysExceptionLog_detailItem'));
+		} else {
+			menuTarget.menu('disableItem', $('#sysExceptionLog_detailItem'));
+		}	
+	};
+	$(function() {
+		sy.createDatagrid($("#sysExceptionLog"),$("#sysExceptionLog_srchForm"),rightMenuFun);
+		Enter_query('sysExceptionLog');
+	});
+	var format_exception_locale = function(value, row, index) {
+		if (row.exception != null) {
+			return row.exception;
+		} else {
+			return "-";
+		}
+	};
+	
+	//异常详情
+	function exceptionDetail(name) {
+		$("#"+name+"_dialog").dialog({    
+		    title: '异常详情',    
+		    width: 700,    
+		    height: 400,    
+		    closed: false,    
+		    cache: false,    
+		    modal: true,
+		    resizable: true
+		});    
+		var selections = $("#sysExceptionLog").datagrid('getSelections');
+		$("#"+name).text(
+				"异常类型：\n\t" + selections[0].type + 
+				/* "\n产生异常的类:\n\t" + selections[0].clazz +
+				"\n产生异常的方法:\n\t" + selections[0].method +	 */
+				"\n产生异常方法:\n\t" + selections[0].longMethod +
+				"\n参数:\n\t" + selections[0].params +
+				"\n异常详情:\n\t" + selections[0].longException 
+		);
+		$("#"+name+"_dialog").dialog('open');
+	}
+</script>
+</head>
+
+<body class="easyui-layout" style="width:100%;height:100%;" onkeydown="javascript:keyPressImpl(event,'sysExceptionLog');" onkeyup="javascript:keyReleaseImpl(event,'sysExceptionLog');">
+<!-- 查询表单 -->
+	<div id="sysExceptionLog_srchDiv" class="easyui-dialog" closed="true" title="查找" style="width:590px;height:150px;">
+			<form id="sysExceptionLog_srchForm" class="frmSearch" action="" autocomplete='off'>
+				<input type="hidden" name="bean" value="exceptionLog">
+				<input type="hidden" name="method" value="page">
+				<table class="tableForm"  align="center" style="width : 500px;">
+					<tr>				
+						<th>异常类型</th>
+						<td><select name="exceptionType" style="width:145px">
+								<option value="">&nbsp;&nbsp;&nbsp;--请选择--</option>
+								<option value="logistics_wms_rf">RF_仓储系统</option>
+								<option value="logistics_tms_rf">RF_运输系统</option>
+								<option value="wms">仓储系统</option>
+								<option value="tms">运输系统</option>
+							</select></td>
+						<th>责任人</th> 
+						<td><input name="creator" style="width:140px"/></td>	
+					</tr>
+					<tr>				
+						<th>产生时间</th>
+						<td><input name="created_time" class="easyui-datebox" style="width:145px"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<a href="javascript:void(0)" class="easyui-linkbutton"onclick="tj_query('sysExceptionLog')">查询</a>&nbsp;&nbsp;&nbsp;
+							<a href="javascript:void(0)" class="easyui-linkbutton"onclick="sy.cleanSearch('sysExceptionLog')">重置</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+<!--数据显示区域-->		
+	<div region="center" style="width:100%;height: 100%;border:0;">
+		<table id="sysExceptionLog">
+			<thead>   
+			       <tr> 
+			       	   <th data-options="field:'id',width:60,sortable : true,hidden:true">ID</th> 			        
+					   <th data-options="field:'type',width:100,sortable : true">异常类型</th>
+			           <th data-options="field:'clazz',width:120,sortable : true" >产生异常的类</th>
+			           <th data-options="field:'method',width:150,sortable : true">产生异常的方法</th>
+			           <th data-options="field:'params',width:100,sortable : true">参数</th>   
+			           <th data-options="field:'exception_locale',width:150,sortable : true" formatter = 'format_exception_locale'>国际化异常</th>
+			           <th data-options="field:'longMethod',width:100,sortable : true">异常方法描述</th>
+			           <th data-options="field:'longException',width:100,sortable : true">异常详情</th>
+			           <th data-options="field:'extendProp1',width:100,sortable : true">异常类名</th>
+			           <th data-options="field:'creator',width:80,sortable : true" formatter = 'format_creator'>责任人</th>
+			           <th data-options="field:'created_time',width:130,sortable : true" formatter = 'format_createdTime'>产生时间</th>
+			       </tr>   
+			   </thead>
+		</table>
+	</div>
+	
+	<div id="exceptionDetail_dialog" class="easyui-dialog" closed="true">
+		<textarea id="exceptionDetail" style="width: 98%;height: 98%;"></textarea>
+	</div>
+
+<!--右键菜单div-->
+	<div id="sysExceptionLog_menu" class="easyui-menu">
+		<div id="sysExceptionLog_refreshItem" onclick="tj_query('sysExceptionLog');">刷新</div>
+		<div id="sysExceptionLog_querryAllItem" onclick="querryAll('sysExceptionLog');">全部查找</div>
+		<div id="sysExceptionLog_tj_querryItem" onclick="simpleSearch('sysExceptionLog');">条件查找</div>
+		<div class="menu-sep"></div>
+		<div id="sysExceptionLog_detailItem" onclick="exceptionDetail('exceptionDetail');">异常详情</div>
+	</div>
+</body>
+</html>

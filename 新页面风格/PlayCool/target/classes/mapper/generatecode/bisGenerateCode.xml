@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.jshuabo.templateadminmysql.server.dao.generatecode.IBisGenerateCodeMapper">
+	<select id="generateCode" resultType="String"
+		parameterType="com.jshuabo.templateadminmysql.server.model.generatecode.GenerateCodeParams"
+		statementType="CALLABLE">
+		{call SP_BIS_GENERATE_CODE(
+		#{mainType,mode=IN,jdbcType=VARCHAR},
+		#{secondType,mode=IN,jdbcType=VARCHAR},
+		#{mainPrefix,mode=IN,jdbcType=VARCHAR},
+		#{secondPrefix,mode=IN,jdbcType=VARCHAR},
+		#{noLength,mode=IN,jdbcType=DECIMAL},
+		#{resultCode,mode=OUT,jdbcType=VARCHAR})}
+	</select>
+	
+	<select id="generateLineNo" resultType="String"
+		parameterType="com.jshuabo.templateadminmysql.server.model.generatecode.GenerateCodeParams"
+		statementType="CALLABLE">
+		{call SP_BIS_GENERATE_NO(
+		#{mainType,mode=IN,jdbcType=VARCHAR},
+		#{secondType,mode=IN,jdbcType=VARCHAR},
+		#{mainPrefix,mode=IN,jdbcType=VARCHAR},
+		#{secondPrefix,mode=IN,jdbcType=VARCHAR},
+		#{noLength,mode=IN,jdbcType=DECIMAL},
+		#{resultCode,mode=OUT,jdbcType=VARCHAR})
+		}
+	</select>
+
+</mapper>

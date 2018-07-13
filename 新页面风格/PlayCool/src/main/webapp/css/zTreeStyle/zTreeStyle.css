@@ -1,0 +1,166 @@
+/*-------------------------------------
+zTree Style
+
+version:	3.4
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+.ztree * {padding:0; margin:0; font-size:12px; font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif}
+.ztree {margin:0; padding:5px; color:#333}
+.ztree li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0}
+.ztree li ul{ margin:0; padding:0 0 0 18px}
+.ztree li ul.line{ background:url(./img/line_conn.gif) 0 0 repeat-y;}
+
+.ztree li a {padding:1px 3px 0 0; margin:0; cursor:pointer; height:17px; color:#333; background-color: transparent;
+	text-decoration:none; vertical-align:top; display: inline-block}
+.ztree li a:hover {text-decoration:underline}
+.ztree li a.curSelectedNode {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.curSelectedNode_Edit {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.tmpTargetNode_inner {padding-top:0px; background-color:#316AC5; color:white; height:16px; border:1px #316AC5 solid;
+	opacity:0.8; filter:alpha(opacity=80)}
+.ztree li a.tmpTargetNode_prev {}
+.ztree li a.tmpTargetNode_next {}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;
+	font-size:12px; border:1px #7EC4CC solid; *border:0px}
+.ztree li span {line-height:16px; margin-right:2px}
+.ztree li span.button {line-height:0; margin:0; width:0px; height:0px; display: inline-block; vertical-align:middle;
+	border:0 none; cursor: pointer;outline:none;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-image:url("./img/zTreeStandard.png"); *background-image:url("./img/zTreeStandard.png")}
+
+.ztree li span.button.chk {width:13px; height:13px; margin:0 3px 0 0; cursor: auto}
+.ztree li span.button.chk.checkbox_false_full {background-position:0 0}
+.ztree li span.button.chk.checkbox_false_full_focus {background-position:0 -14px}
+.ztree li span.button.chk.checkbox_false_part {background-position:0 -28px}
+.ztree li span.button.chk.checkbox_false_part_focus {background-position:0 -42px}
+.ztree li span.button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full {background-position:-14px 0}
+.ztree li span.button.chk.checkbox_true_full_focus {background-position:-14px -14px}
+.ztree li span.button.chk.checkbox_true_part {background-position:-14px -28px}
+.ztree li span.button.chk.checkbox_true_part_focus {background-position:-14px -42px}
+.ztree li span.button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full {background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full {background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable {background-position:-42px -56px}
+
+.ztree li span.button.switch {width:18px; height:18px}
+.ztree li span.button.root_open{background-position:-92px -54px}
+.ztree li span.button.root_close{background-position:-74px -54px}
+.ztree li span.button.roots_open{background-position:-92px 0}
+.ztree li span.button.roots_close{background-position:-74px 0}
+.ztree li span.button.center_open{background-position:-92px -18px}
+.ztree li span.button.center_close{background-position:-74px -18px}
+.ztree li span.button.bottom_open{background-position:-92px -36px}
+.ztree li span.button.bottom_close{background-position:-74px -36px}
+.ztree li span.button.noline_open{background-position:-92px -72px}
+.ztree li span.button.noline_close{background-position:-74px -72px}
+.ztree li span.button.root_docu{ background:none;}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-position:-56px -18px}
+.ztree li span.button.bottom_docu{background-position:-56px -36px}
+.ztree li span.button.noline_docu{ background:none;}
+
+.ztree li span.button.ico_open{margin-right:2px; background-position:-110px -16px; vertical-align:top; *vertical-align:middle;}
+.ztree li span.button.ico_close{margin-right:2px; background-position:-110px 0; vertical-align:top; *vertical-align:middle}
+
+
+.ztree li span.button.ico_loading{margin-right:2px; background:url(./img/loading.gif) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+
+ul.tmpTargetzTree {background-color:#FFE6B0; opacity:0.8; filter:alpha(opacity=80)}
+
+/*span.tmpzTreeMove_arrow {width:16px; height:16px; display: inline-block; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-position:-110px -80px; background-image:url("./img/zTreeStandard.png"); *background-image:url("./img/zTreeStandard.gif")}
+*/
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden; background-color:#cfcfcf; border:1px #00B83F dotted; opacity:0.8; filter:alpha(opacity=80)}
+.zTreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
+
+/*
+	导航菜单更换 begin
+*/
+.ztree li span.button.pBisIcon_ico_open, .ztree li span.button.pBisIcon_ico_close{margin-right:2px;margin-top:2px; background: url(./img/diy/pBisIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pbeforeCarIcon_ico_open, .ztree li span.button.pbeforeCarIcon_ico_close{margin-right:2px; margin-top:1px;background: url(./img/diy/before_ico.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pCenterCarIcon_ico_open, .ztree li span.button.pCenterCarIcon_ico_close{margin-right:2px; margin-top:1px;background: url(./img/diy/center_ico.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pAfterCarIcon_ico_open, .ztree li span.button.pAfterCarIcon_ico_close{margin-right:2px; margin-top:1px;background: url(./img/diy/after_ico.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pDailyIcon_ico_open, .ztree li span.button.pDailyIcon_ico_close{margin-right:2px; margin-top:1px;background: url(./img/diy/pReportIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pSysIcon_ico_open, .ztree li span.button.pSysIcon_ico_close{margin-right:2px;margin-top:1px; background: url(./img/diy/pSysIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+/*
+	导航菜单更换 end
+*/
+.ztree li span.button.pOmsIcon_ico_open, .ztree li span.button.pOmsIcon_ico_close{margin-right:2px; background: url(./img/diy/pOmsIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsIcon_ico_open{margin-right:2px; background: url(./img/diy/pWmsIcon_open.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsIcon_close.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pTmsIcon_ico_open, .ztree li span.button.pTmsIcon_ico_close{margin-right:2px; background: url(./img/diy/pTmsIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisBillTypeIcon_ico_open, .ztree li span.button.pBisBillTypeIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisBillTypeIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisGeoIcon_ico_open, .ztree li span.button.pBisGeoIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisGeoIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisOperatorIcon_ico_open, .ztree li span.button.pBisOperatorIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisOperatorIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisOrgIcon_ico_open, .ztree li span.button.pBisOrgIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisOrgIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pbisProductIcon_ico_open, .ztree li span.button.pbisProductIcon_ico_close{margin-right:2px; background: url(./img/diy/pbisProductIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisProjectIcon_ico_open, .ztree li span.button.pBisProjectIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisProjectIcon2.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisWarehouseIcon_ico_open, .ztree li span.button.pBisWarehouseIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisWarehouseIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBisWayBillIcon_ico_open, .ztree li span.button.pBisWayBillIcon_ico_close{margin-right:2px; background: url(./img/diy/pBisWayBillIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsInIcon_ico_open, .ztree li span.button.pWmsInIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsInIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsInventoryIcon_ico_open, .ztree li span.button.pWmsInventoryIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsInventoryIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsOutIcon_ico_open, .ztree li span.button.pWmsOutIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsOutIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsPackageIcon_ico_open, .ztree li span.button.pWmsPackageIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsPackageIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsTaskIcon_ico_open, .ztree li span.button.pWmsTaskIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsTaskIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pWmsMoveIcon_ico_open, .ztree li span.button.pWmsMoveIcon_ico_close{margin-right:2px; background: url(./img/diy/pWmsMoveIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pReportIcon_ico_open, .ztree li span.button.pReportIcon_ico_close{margin-right:2px; background: url(./img/diy/pReportIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pTrackingIcon_ico_open, .ztree li span.button.pTrackingIcon_ico_close{margin-right:2px; background: url(./img/diy/pTrackingIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pInventoryIcon_ico_open, .ztree li span.button.pInventoryIcon_ico_close{margin-right:2px; background: url(./img/diy/pInventoryIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pEveryDayIcon_ico_open, .ztree li span.button.pEveryDayIcon_ico_close{margin-right:2px; background: url(./img/diy/pEveryDayIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pBillTrackingIcon_ico_open, .ztree li span.button.pBillTrackingIcon_ico_close{margin-right:2px; background: url(./img/diy/pBillTrackingIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pFinanceIcon_ico_open, .ztree li span.button.pFinanceIcon_ico_close{margin-right:2px; background: url(./img/diy/pFinanceIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pSummaryIcon_ico_open, .ztree li span.button.pSummaryIcon_ico_close{margin-right:2px; background: url(./img/diy/pSummaryIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pReceiveShipIcon_ico_open, .ztree li span.button.pReceiveShipIcon_ico_close{margin-right:2px; background: url(./img/diy/pReceiveShipIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pTransportToolIcon_ico_open, .ztree li span.button.pTransportToolIcon_ico_close{margin-right:2px; background: url(./img/diy/pTransportToolIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.turnoverCartonIcon_ico_open, .ztree li span.button.turnoverCartonIcon_ico_close{margin-right:2px; background: url(./img/diy/turnoverCartonIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.transportationIcon_ico_open, .ztree li span.button.transportationIcon_ico_close{margin-right:2px; background: url(./img/diy/transportationIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.dataStatisticsIcon_ico_open, .ztree li span.button.dataStatisticsIcon_ico_close{margin-right:2px; background: url(./img/diy/dataStatisticsIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.serialNoRuleIcon_ico_open, .ztree li span.button.serialNoRuleIcon_ico_close{margin-right:2px; background: url(./img/diy/serialNoRuleIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+	
+	/* TMS */
+.ztree li span.button.pMonitorIcon_ico_open, .ztree li span.button.pMonitorIcon_ico_close{margin-right:2px; background: url(./img/diy/pMonitorIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pShipManageIcon_ico_open, .ztree li span.buttodefaultIconn.pShipManageIcon_ico_close{margin-right:2px; background: url(./img/diy/pOutBoundIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pArrivalIcon_ico_open, .ztree li span.button.pArrivalIcon_ico_close{margin-right:2px; background: url(./img/diy/pInBoundIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pReceiptManageIcon_ico_open, .ztree li span.button.pReceiptManageIcon_ico_close{margin-right:2px; background: url(./img/diy/pReceiptManageIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pTransportIcon_ico_open, .ztree li span.button.pTransportIcon_ico_close{margin-right:2px; background: url(./img/diy/pTransportIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pDispatchIcon_ico_open, .ztree li span.button.pDispatchIcon_ico_close{margin-right:2px; background: url(./img/diy/pDispatchIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pPpaymentyIcon_ico_open, .ztree li span.button.pPpaymentyIcon_ico_close{margin-right:2px; background: url(./img/diy/pPpaymentyIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.default_folderIcon_ico_open, .ztree li span.button.default_folderIcon_ico_close{margin-right:2px; background: url(./img/diy/default_folderIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.defaultIcon_ico_open, .ztree li span.button.defaultIcon_ico_close{margin-right:2px; background: url(./img/diy/defaultIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+
+	/* 鏈妭鐐�*/
+.ztree li span.button.pOutBoundIcon_ico_docu{margin-right:2px; background: url(./img/diy/pOutBoundIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pInBoundIcon_ico_docu{margin-right:2px; background: url(./img/diy/pInBoundIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.pSysUserIcon_ico_docu{margin-right:2px; background: url(./img/diy/pSysUserIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pSysRoleIcon_ico_docu{margin-right:2px; background: url(./img/diy/pSysRoleIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pSysPermisiionIcon_ico_docu{margin-right:2px; background: url(./img/diy/pSysPermisiionIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.pSysLogIcon_ico_docu{margin-right:2px; background: url(./img/diy/pSysLogIcon.png) no-repeat scroll 0 transparent; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.pSettingIcon_ico_docu{margin-right:2px; background: url(./img/diy/pSettingIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.reportDefaultIcon_ico_docu{margin-right:2px; background: url(./img/diy/reportdefaultIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.defaultIcon_ico_docu{margin-right:2px; background: url(./img/diy/defaultIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.buttonIcon_ico_docu{margin-right:2px; background: url(./img/diy/buttonIcon.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+/* 鑷畾涔塱con diy  end*/
+
+/* level style*/
+/*.ztree li span.button.level0 {
+	display:none;
+}
+.ztree li ul.level0 {
+	padding:0;
+	background:none;
+}*/

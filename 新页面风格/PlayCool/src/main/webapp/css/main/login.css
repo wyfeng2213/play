@@ -1,0 +1,118 @@
+body {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+.content {
+	position: absolute;
+	top:0;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	vertical-align: middle;
+	background-image: url(../../images/login-background.jpg); 
+	background-repeat: no-repeat;
+}
+
+.top_left,.top_right {
+	width: 340px;
+	height: 10px;
+	margin-top:10%;
+	border-color:red;
+}
+
+.top_center {
+	width: 680px;
+	height: 10px;
+}
+
+.content_left,.content_right {
+	width: 340px;
+	height: 180px;
+}
+.content_right{
+	width:340px;
+	height:370px;
+	border:solid 2px white;
+	padding:0;
+	background-color:white;	
+	box-shadow:0px 6px 5px #888888;
+	
+}
+.bottom_1 {
+	width: 340px;
+	height: 3px;
+	text-align: right;
+	display: none;
+}
+
+.bottom_2 {
+	width: 340px;
+	height: 28px;
+	font-size: 20px;
+	color: red;
+	margin-top:30px;
+	margin-left:15px;
+	font-weight:bold;
+}
+
+.d_txt {
+	width: 50px;
+	font-size: 15px;
+	margin-left:30px;
+	margin-top:18px;
+	font-weight:bold;
+}
+
+.d_val {
+	width: 295px;
+	height: 30px;
+	margin-left:0px;
+	margin-top:20px;
+}
+.account{
+	margin-top:50px;
+}
+
+.d_val input {
+	width: 220px;
+	height: 25px;
+}
+
+.d_main {
+   
+}
+
+.d_val select {
+	width: 196px;
+	height: 30px;
+}
+.d_login{
+	width:240px;
+	height:45px;
+	background-color:#FF8C00;
+	border-radius:15px;
+	box-shadow:0px 5px 5px #888888;
+	cursor:pointer;
+	margin-top:60px;
+	margin-right:20px;
+}
+.d_login :hover{
+	width:240px;
+	height:30px;
+	background-color:#B8860B;
+	border-radius:15px;
+}
+.txt_login{
+	padding-top:15px;
+	font-siz:16px;
+	font-weight:bold;
+}
